@@ -89,3 +89,42 @@ VALUES ('Russia', 'São Petersburgo', 'Leningrado', '+3', 'SP');`
 `SELECT * FROM cities_by_country_state where country = 'Brasil' and state = 'Minas Gerais' and initials = 'BH';` ❌
 
 `SELECT * FROM cities_by_country_state where country = 'Brasil' and state = 'Minas Gerais' and city = 'Belo Horizonte';` ✔
+
+## 5 - CREATE 'MOVIES_BY_GENRE' TABLE
+TABELA PARA LISTAR DADOS DE FILMES DE ACORDO COM O **GENÊRO**
+
+`CREATE TABLE test.movies_by_genre (
+   genre text, 
+   date date, 
+   title text, 
+   author text,
+   PRIMARY KEY ((genre),date, author, title)) 
+WITH CLUSTERING ORDER BY (date DESC,author ASC, title ASC);`
+
+#### 5.1 - POPULATE TABLE 
+`INSERT INTO test.movies_by_genre (genre, date, title, author)
+VALUES ('Terror', '2022-09-07', 'A morte do cadaver', 'John Doe');`
+
+`INSERT INTO test.movies_by_genre (genre, date, title, author)
+VALUES ('Terror', '2022-08-09', 'Bug em Produção', 'Eu mesmo');`
+
+`INSERT INTO test.movies_by_genre (genre, date, title, author)
+VALUES ('Terror', '2022-06-10', 'Deploy sexta a noite', 'Todos nós');`
+
+`INSERT INTO test.movies_by_genre (genre, date, title, author)
+VALUES ('Ação', '2022-09-07', 'Eliminando Bugs 3', 'John Doe');`
+
+`INSERT INTO test.movies_by_genre (genre, date, title, author)
+VALUES ('Terror', '2022-09-07', 'A volta dos que não foram', 'John Travolta');`
+
+#### 5.2 - TEST QUERIES
+
+`SELECT * FROM movies_by_genre where genre = 'Terror';` ✔
+
+`SELECT * FROM movies_by_genre where genre = 'Terror' and date > '2022-06-01' and date < '2022-08-31';` ✔
+
+`SELECT * FROM movies_by_genre where genre = 'Terror' and date > '2022-06-01' and date < '2022-08-31' and author = 'Eu mesmo';` ❌
+
+`SELECT * FROM movies_by_genre where genre = 'Terror' and date = '2022-09-07';` ✔
+
+`SELECT * FROM movies_by_genre where genre = 'Terror' and date = '2022-09-07' and author = 'John Doe';` ✔
