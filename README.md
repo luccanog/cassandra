@@ -15,6 +15,7 @@ Show me the code - Cassandra database
 
 ## 3 - CREATE 'CITIES BY COUNTRY' TABLE
 TABELA PARA LISTAR DADOS DE TODAS AS CIDADES DE **UM PAÍS**
+
 `CREATE TABLE test.cities_by_country (
    country text, 
    city text, 
