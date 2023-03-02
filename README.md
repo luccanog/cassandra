@@ -52,7 +52,7 @@ VALUES ('Russia', 'São Petersburgo', 'Leningrado', '+3', 'SP');`
 
 
 
-## 4 - CREATE 'CITIES BY COUNTRY AND COUNTRY' TABLE
+## 4 - CREATE 'CITIES BY COUNTRY AND STATE' TABLE
 TABELA PARA LISTAR DADOS DE TODAS AS CIDADES DE **UM ESTADO**
 
 `CREATE TABLE test.cities_by_country_state (
