@@ -59,7 +59,7 @@ TABELA PARA LISTAR DADOS DE TODAS AS CIDADES DE **UM ESTADO**
    country text, 
    state text, 
    city text, 
-   foundation text,
+   offset text,
    initials text, 
    PRIMARY KEY ((country,state),city)) 
 WITH CLUSTERING ORDER BY (city ASC);`
